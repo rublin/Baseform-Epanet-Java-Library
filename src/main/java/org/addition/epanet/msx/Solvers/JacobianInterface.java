@@ -26,5 +26,5 @@ public interface JacobianInterface {
         TANKS_EQUIL,
     }
 
-    public void solve(double t, double[] y, int n, double[] f, int off,Operation op);
+    public void solve(double t, double[] y, int n, double[] f, int off, Operation op);
 }

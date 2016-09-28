@@ -556,7 +556,7 @@ public class EpanetUI implements ActionListener {
                 Class<?> appCl = Class.forName("com.apple.eawt.Application");
                 Object app = appCl.getMethod("getApplication", new Class[]{}).invoke(null);
                 Image dockImage = Toolkit.getDefaultToolkit().getImage(EpanetUI.class.getResource("/uiresources/ae.png"));
-                appCl.getMethod("setDockIconImage",java.awt.Image.class).invoke(app, dockImage);
+                appCl.getMethod("setDockIconImage",Image.class).invoke(app, dockImage);
                 JMenuBar menuBar = new JMenuBar();
                 JMenu fileMenu = new JMenu("File");
                 menuBar.add(fileMenu);
@@ -590,14 +590,14 @@ public class EpanetUI implements ActionListener {
      * @param url
      */
     private void browse(String url) {
-        if (!java.awt.Desktop.isDesktopSupported()) {
+        if (!Desktop.isDesktopSupported()) {
             System.err.println("Desktop is not supported");
             return;
         }
 
-        java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+        Desktop desktop = Desktop.getDesktop();
 
-        if (!desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+        if (!desktop.isSupported(Desktop.Action.BROWSE)) {
             System.err.println("Desktop doesn't support the browse action");
             System.exit(1);
         }

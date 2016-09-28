@@ -42,7 +42,7 @@ public class SimulationRule {
         }
 
         SimulationRule rule;
-        SimulationRule.Action action;
+        Action action;
     }
 
     // Rules execution result
@@ -602,7 +602,7 @@ public class SimulationRule {
     {
         boolean result=true;
 
-        for(SimulationRule.Premise p : getPchain())
+        for(Premise p : getPchain())
         {
             if (p.getLogop() == Rulewords.r_OR){
                 if (!result)

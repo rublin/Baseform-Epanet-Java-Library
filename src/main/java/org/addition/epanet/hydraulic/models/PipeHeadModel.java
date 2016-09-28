@@ -56,5 +56,5 @@ public interface PipeHeadModel {
      * @return Computed link coefficients.
      * @throws ENException
      */
-    public LinkCoeffs compute(PropertiesMap pMap,SimulationLink sL) throws ENException;
+    public LinkCoeffs compute(PropertiesMap pMap, SimulationLink sL) throws ENException;
 }
